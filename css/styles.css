@@ -31,6 +31,11 @@ html, body {
 body {
     background: #f6f6f6;
     margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Caveat', cursive;
 }
 
 /* links */
@@ -76,12 +81,20 @@ footer a:hover {
 .home {
     background: url(../images/bg-home-office-studio.jpg) no-repeat;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
 }
 
 /*adding white background on text to visibly see better*/
 
 .home .content-wrapper {
     background: rgb(255 255 255 / 0.9);
+    flex: 1 0 auto;
+}
+
+.content-bg {
+    background: rgb(255 255 255 / 0.9);
+    padding: 30px;
 }
 /* RESUME
 -----------------------------*/
@@ -131,7 +144,12 @@ jobs I have put in.*/
 
 /* Work Experience
 -----------------------------*/
+.work-item {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    column-gap: 20px;
 
+}
 
 /* Education
 -----------------------------*/
@@ -141,7 +159,10 @@ jobs I have put in.*/
 ----------------------------f-*/
 footer {
     background: #222;
-    color: #d3d4d6
+    color: #d3d4d6;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
 }
 
 .socials {
@@ -150,8 +171,15 @@ footer {
 }
 .socials li {
     display: inline-block;
+    margin-left: 10px;
+
 }
 .socials img {
     width: 32px;
 }
 
+/*changing opacity of img in footer when hovering*/
+.socials img:hover {
+    opacity: 0.5;
+
+}
