@@ -87,12 +87,20 @@ footer a:hover {
     background: #3c8453;
     color: #f6f6f6;
     text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.2 rem;
+    display: inline-blocking;
+    padding: 7px;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    border-radius: 4px;
+
 }
 
 .content-wrapper {
     margin: 0 auto;
     padding: 30px;
-    max-width: 900px
+    max-width: 900px;
 }
 
 /* HOME
@@ -115,6 +123,16 @@ footer a:hover {
     background: rgb(255 255 255 / 0.9);
     padding: 30px;
 }
+
+@media screen and (max-width:650px) {
+    .home .content-wrapper {
+        padding: 10px;
+    }
+
+    .content-bg {
+        padding: 20px;
+    }
+}
 /* RESUME
 -----------------------------*/
 .resume header::before {
@@ -136,11 +154,28 @@ footer a:hover {
     position: fixed;
     top: 5px;
     left: 5px;
+    font-size: 1.5 rem;
 }
 
+@media screen and (max-width: 1200px) {
+    .download-link {
+        position: absolute;
+    }
+}
 
-/* Profile
------------------------------*/
+@media screen and (max-width: 500px) {
+    .resume header::before {
+        height: 200px;
+    }
+
+    h1 {
+        font-size: 5rem;
+    }
+
+    h2 {
+        font-size: 2.6rem;
+    }
+}
 
 
 /* Projects
@@ -150,15 +185,43 @@ container above it, not aligning with the rest of
 jobs I have put in.*/
 
 .project-item {
-    display: flow-root;
     margin: 30px 0;
 }
 
 .project-item img {
     width: 300px;
-    float: left;
-    margin-right: 20px;
 }
+
+@media screen and (min-width:860px) {
+    .project-item {
+        display: flow-root;
+    }
+    
+    .project-item img {
+        float: left;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (min-width:650px) and (max-width:859px) {
+    .project-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
+    }
+
+    .project-item img {
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .project-item img {
+        width: 100px;
+        margin-bottom: 10px;
+    };
+}
+
 
 
 /* Work Experience
@@ -167,11 +230,27 @@ jobs I have put in.*/
     display: grid;
     grid-template-columns: 300px 1fr;
     column-gap: 20px;
+    margin: 30px 0;
 
+}
+
+.work-details p {
+    margin: 0;
+    line-height: 0;
+}
+
+.work-summary p:first-child {
+    margin-top: 0;
 }
 
 /* Education
 -----------------------------*/
+.education-item {
+    margin: 30px 0;
+}
+.education-item p {
+    margin: 0;
+}
 
 
 /* FOOTER
@@ -179,9 +258,6 @@ jobs I have put in.*/
 footer {
     background: #222;
     color: #d3d4d6;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
 }
 
 .socials {
@@ -200,5 +276,19 @@ footer {
 /*changing opacity of img in footer when hovering*/
 .socials img:hover {
     opacity: 0.5;
+}
 
+@media screen and (min-width: 860px) {
+    footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+}
+
+@media screen and (max-width: 859px) {
+    footer {
+        text-align: center;
+        padding: 10px;
+    }
 }
